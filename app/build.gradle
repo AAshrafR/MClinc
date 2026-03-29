@@ -1,0 +1,106 @@
+plugins {
+    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.jetbrainsKotlinAndroid)
+    id 'com.google.gms.google-services'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
+}
+
+android {
+    namespace 'com.example.mclinc'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.mclinc"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
+
+
+    def lifecycle_version = "2.6.1"
+
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
+    testImplementation libs.truth
+
+    //Firebase
+    implementation platform(libs.firebase.bom)
+    //noinspection UseTomlInstead
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation libs.firebase.auth.ktx
+    implementation libs.firebase.database.ktx
+    implementation libs.firebase.storage.ktx
+
+    //Swipe/Slide button
+    implementation libs.slidetoact
+
+    // Material Design
+    implementation libs.material.v161
+
+    //QR Code generator
+    implementation libs.core
+    implementation libs.zxing.android.embedded
+
+    //Chart / Graph
+    implementation 'com.github.majorkik:SparkLineLayout:1.0.1'
+
+    // Lottie
+    implementation libs.lottie
+
+    //Cryptography
+    implementation(libs.androidx.security.crypto)
+
+    //Requesting permissions at runtime.
+    implementation libs.dexter
+
+
+    //Coroutines
+    implementation libs.kotlinx.coroutines.play.services
+    implementation libs.kotlinx.coroutines.core
+    implementation libs.kotlinx.coroutines.android
+
+    //ViewModel
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+
+    // LiveData
+    implementation libs.androidx.lifecycle.livedata.ktx
+
+    //GSON
+    implementation libs.gson
+
+
+}
