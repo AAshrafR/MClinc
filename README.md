@@ -2,9 +2,13 @@
 
 ## Overview
 
-MClinc is a modern Android application built to simplify medical appointment booking and patient management. It enables users to schedule appointments, manage their profiles, and track medical-related data بسهولة وكفاءة.
+MClinc is a modern Android application built to simplify medical appointment booking and patient management. It enables users to schedule appointments, manage their profiles, and track medical-related data easly and efficently.
 
 The app is developed using **Kotlin** and follows **Clean Architecture**, ensuring scalability, maintainability, and a clear separation of concerns.
+
+## Firebase Setup
+
+This project uses Firebase but the `google-services.json` file is not included for security reasons.
 
 ---
 
